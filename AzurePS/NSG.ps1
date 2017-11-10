@@ -1,4 +1,21 @@
-﻿Login-AzureRmAccount #登入Azure
+﻿<#
+此脚本功能：
+自动获取每个资源组下每个网络接口的地理位置；
+根据在脚本制定好的安全规则，在每个地理位置中都创建具有相同规则的NSG；
+将每个地理位置中的NSG，安装在这一地理位置中所有的网络接口上。
+
+此脚本流程：
+登入Azure账户；
+输入要进行更改的资源组的名称；
+获取所有网络接口的地理位置，合并同类项；
+根据脚本中定义的规则，在每个地理位置中创建NSG,；
+获取所有网络接口的名称和地理位置；
+根据网卡的地理位置，将之前创建在不同地理位置的NSG安装到相应网卡上。
+
+#>
+
+
+Login-AzureRmAccount #登入Azure
 New-Item .\nsg -ItemType directory #创建工作目录
 $rgn= Read-Host "Please enter resource group name" #输入网络资源组名称
 
