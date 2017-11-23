@@ -13,5 +13,5 @@ $sum=$sum+$value
 $cpuno = (Get-WmiObject -class win32_processor).numberoflogicalprocessors
 
 #get average processor time
-$ave = $sum/$cpuno
+$ave = $sum/$cpuno/$sampletime
 echo "the average is $ave"
