@@ -33,4 +33,4 @@ foreach($subname in $subnames)
     }
 }
 
-$lists | select @{name="subscription";expression={$_["subname"]}},@{name="rgname";expression={$_["rgname"]}}, @{name="vmname";expression={$_["vmname"]}},@{name="size";expression={$_["size"]}},@{name="time";expression={$_["time"]}} ,@{name="status";expression={$_["status"]}},@{name="IP";expression={$_["ip"]}}| Out-GridView
+$lists | select @{name="subscription";expression={$_["subname"]}},@{name="rgname";expression={$_["rgname"]}}, @{name="vmname";expression={$_["vmname"]}},@{name="size";expression={$_["size"]}},@{name="time";expression={$_["time"]}} ,@{name="status";expression={$_["status"]}},@{name="IP";expression={$_["ip"]}}| Out-GridView 
